@@ -1,0 +1,9 @@
+# Auth MicroService
+node_modules
+auth/node_modules
+
+# Next JS React Client
+client/node_modules
+client/.next
+
+.next

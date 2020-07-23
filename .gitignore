@@ -8,5 +8,6 @@ client/.next
 
 .next
 
-# Common
-common
+# Common Library Build
+common/build
+common/node_modules

@@ -3,11 +3,7 @@ import "express-async-errors";
 import cookieSession from "cookie-session";
 import { json } from "body-parser";
 import { errorHandler, NotFoundError } from "@akticketify/common";
-
-import { signupRouter } from "./routes/signup";
-import { currentUserRouter } from "./routes/current-user";
-import { signinRouter } from "./routes/signin";
-import { signoutRouter } from "./routes/signout";
+import { createTicketRouter } from "./routes/new";
 
 const app = express();
 app.set("trust proxy", true);
@@ -20,10 +16,7 @@ app.use(
   })
 );
 
-app.use(signupRouter);
-app.use(signinRouter);
-app.use(currentUserRouter);
-app.use(signoutRouter);
+app.use(createTicketRouter);
 
 app.all("*", async () => {
   throw new NotFoundError();

@@ -5,7 +5,6 @@ const start = async () => {
   if (!process.env.MONGO_URI) {
     throw new Error("MONGO_URI must be defined");
   }
-
   if (!process.env.JWT_KEY) {
     throw new Error("JWT_KEY must be defined");
   }
@@ -15,12 +14,13 @@ const start = async () => {
       useUnifiedTopology: true,
       useCreateIndex: true
     });
-    console.log("Connected to auth service mongo db");
+
+    console.log("Connected to Tickets service mongo db");
   } catch (err) {
-    console.error(`Some Issue happened while connecting to auth mongo db`);
+    console.error(`Issue happened while connecting to ticket service mongodb`);
   }
   app.listen(3000, () => {
-    console.log("Auth services listening on port 3000!!");
+    console.log("Tickets services listening on port 3000!!");
   });
 };
 
